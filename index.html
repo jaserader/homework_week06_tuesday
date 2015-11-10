@@ -9,8 +9,8 @@
 
     <header>
       <nav>
+        <a href="#">Go Home</a>
         <a href="#">New Contact</a>
-        <a href="#">Contacts List</a>
       </nav>
     </header>
 
@@ -38,7 +38,26 @@
     </script>
 
     <script id="contactListTemplate" type="text/template">
+      <h2>Contacts</h2>
+      <ul>
+        <% _.forEach(contacts, function(contact){ %>
+          <li>
+            <a id="expand" href="#contactsJase/<%= contact._id %>"><%= contact.name %></a>
+            <div class="box">
+                <%= _.trunc(contact.body, 100) %>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
 
+    </script>
+
+    <script type="text/template" id="contactDetailTemplate">
+      <h1><%= name %></h1>
+        <span><%= email %></span>
+        <span><%= phoneNumber %></span>
+        <span><%= twitter %></span>
+        <span><%= linkedin %></span>
 
     </script>
 
