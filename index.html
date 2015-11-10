@@ -2,9 +2,45 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/main.css" media="screen" title="no title" charset="utf-8">
     <title></title>
   </head>
   <body>
+
+    <header>
+      <nav>
+        <a href="#">New Contact</a>
+        <a href="#">Contacts List</a>
+      </nav>
+    </header>
+
+    <div class="wrapper">
+      <aside id="sideBar"></aside>
+      <main id="mainArea"></main>
+    </div>
+
+    <script id="contactInputTemplate" type="text/template">
+
+      <h2>New Contact:</h2>
+
+      <span>Email: </span>
+        <input id="email" type="text" name="email" value="" placeholder="example@email.com">
+      <span>Name: </span>
+        <input id="name" type="text" name="name" value="" placeholder="Last, First">
+      <span>Phone Number: </span>
+        <input id="phoneNumber" type="text" name="number" value="" placeholder="xxx-xxx-xxxx">
+      <span>Twitter: </span>
+        <input id="twitterUsername" type="text" name="twitter" value="" placeholder="@twittername">
+      <span>Linkedin: </span>
+        <input id="linkedin" type="text" name="linkedin" value="" placeholder="name">
+      <input id="submitBtn" type="button" name="submit" value="Submit">
+
+    </script>
+
+    <script id="contactListTemplate" type="text/template">
+
+
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
