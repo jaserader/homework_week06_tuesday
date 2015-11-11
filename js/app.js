@@ -1,14 +1,30 @@
 //Models
 
 var Contact = Backbone.Model.extend({
-  urlRoot: "http://tiny-starburst.herokuapp.com/collections/contactsjase"
+  urlRoot: "http://tiny-starburst.herokuapp.com/collections/contactsjase",
 
-  //defaults
+    defaults: {
+      "email": " ",
+      "name": " ",
+      "phoneNumber": " ",
+      "twitter": " ",
+      "linkedin": " "
+    }
 })
 
 var Contacts = Backbone.Collection.extend({
   url: "http://tiny-starburst.herokuapp.com/collections/contactsjase"
 })
+
+///////////////////////////////////////////////////////////////////////
+
+var homeView = Backbone.View.extend({
+  template: _.template($('#homeTemplate').html()),
+
+  render: function(){
+    this.$el.html(this.template());
+  }
+});
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -84,6 +100,7 @@ var contactsList = Backbone.View.extend({
 
 var contactDetailsView = Backbone.View.extend({
   template: _.template($('#contactDetailTemplate').html()),
+
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
     return this;
@@ -95,8 +112,15 @@ var contactDetailsView = Backbone.View.extend({
 var contactsRouter = Backbone.Router.extend({
 
   routes: {
-    "": "contacts",
+    "": "home",
+    "contacts": "contacts",
     "contactsJase/:id" : "contactDetails"
+  },
+
+  home: function(){
+    var view = new homeView();
+    view.render();
+    $('#mainArea').html(view.$el);
   },
 
   contacts: function(){
@@ -112,9 +136,10 @@ var contactsRouter = Backbone.Router.extend({
         id: id
       })
     });
-    view.model.fetch();    //Fetch
+    view.model.fetch();
     view.render();
     $('#mainArea').html(view.$el);
+    view.listenTo(Contact, 'sync', view.render());
   }
 });
 

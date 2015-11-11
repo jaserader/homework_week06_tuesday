@@ -24,32 +24,62 @@ header {
   display: block;
   margin-right: 2.35765%;
   width: 100%;
+  border-radius: 25px;
+  margin-bottom: 15px;
   height: 75px;
   background: #91B3CE;
-  padding: 25px; }
+  padding: 25px;
+  font-weight: bold; }
   header:last-child {
     margin-right: 0; }
   header nav a {
     text-decoration: none;
     color: #fff;
-    margin-right: 20px; }
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 25px;
+    font-weight: bold; }
+    header nav a:last-child {
+      float: right; }
+  header nav a:hover {
+    color: gray; }
 
 .wrapper #sideBar {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 31.76157%;
-  margin-right: 0;
+  border-radius: 35px;
+  margin-right: 15px;
+  padding-top: 25px;
+  padding-left: 25px;
   height: 500px;
   background: #A8FC9A; }
   .wrapper #sideBar:last-child {
     margin-right: 0; }
+  .wrapper #sideBar h2 {
+    color: gray; }
+  .wrapper #sideBar ul {
+    padding-left: 15px; }
+    .wrapper #sideBar ul li {
+      list-style: circle;
+      color: gray;
+      margin-bottom: 7px; }
+      .wrapper #sideBar ul li a {
+        text-decoration: none;
+        color: gray;
+        font-weight: bold; }
+        .wrapper #sideBar ul li a:hover {
+          padding-left: 10px;
+          font-weight: bolder;
+          color: #fff; }
 
 .wrapper main {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 68.23501%;
+  width: 65.88078%;
+  border-radius: 35px;
   margin-right: 0;
   background: #EC554D;
   height: 500px;
@@ -58,6 +88,15 @@ header {
     margin-right: 0; }
   .wrapper main h2 {
     color: #fff; }
+  .wrapper main #addBook {
+    margin-top: 70px;
+    width: 100%;
+    text-align: center;
+    font-size: 60px; }
+  .wrapper main i {
+    color: #fff;
+    font-size: 200px;
+    margin-left: 232px; }
   .wrapper main span {
     display: block;
     margin-top: 10px;
@@ -75,5 +114,10 @@ header {
     font-size: 15px; }
     .wrapper main input:last-child {
       margin-top: 25px;
+      letter-spacing: 1.5px;
       font-size: 20px;
-      font-weight: bold; }
+      background: gray;
+      color: #fff;
+      font-weight: normal; }
+      .wrapper main input:last-child:hover {
+        background: #AAAAAA; }

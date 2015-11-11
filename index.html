@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css" media="screen" title="no title" charset="utf-8">
     <title></title>
   </head>
@@ -10,7 +11,7 @@
     <header>
       <nav>
         <a href="#">Go Home</a>
-        <a href="#">New Contact</a>
+        <a href="#contacts">New Contact</a>
       </nav>
     </header>
 
@@ -18,6 +19,11 @@
       <aside id="sideBar"></aside>
       <main id="mainArea"></main>
     </div>
+
+    <script id="homeTemplate" type="text/template">
+      <span id="addBook">Address Book</span>
+      <i class="fa fa-book"></i>
+    </script>
 
     <script id="contactInputTemplate" type="text/template">
 
@@ -38,7 +44,7 @@
     </script>
 
     <script id="contactListTemplate" type="text/template">
-      <h2>Contacts</h2>
+      <h2>Contacts:</h2>
       <ul>
         <% _.forEach(contacts, function(contact){ %>
           <li>
@@ -52,9 +58,9 @@
 
     </script>
 
-    <script type="text/template" id="contactDetailTemplate">
-      <h1><%= name %></h1>
-        <span><%= email %></span>
+    <script id="contactDetailTemplate" type="text/template">
+      <div><%= email %></div>
+        <span><%= name %></span>
         <span><%= phoneNumber %></span>
         <span><%= twitter %></span>
         <span><%= linkedin %></span>

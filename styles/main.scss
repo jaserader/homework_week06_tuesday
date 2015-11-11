@@ -12,29 +12,72 @@ body{
 
 header{
   @include span-columns(12);
+  border-radius: 25px;
+  margin-bottom: 15px;
   height: 75px;
   background: #91B3CE;
   padding: 25px;
+  font-weight: bold;
 
   nav {
     a{
       text-decoration: none;
       color: #fff;
-      margin-right: 20px;
+      margin-left: 50px;
+      margin-right: 50px;
+      font-size: 25px;
+      font-weight: bold;
+
+      &:last-child {
+        float: right;
+      }
     }
+    a:hover{
+          color: gray;
+      }
   }
 }
 
 .wrapper {
   #sideBar {
     @include span-columns(4);
-    margin-right: 0;
+    border-radius: 35px;
+    margin-right: 15px;
+    padding-top: 25px;
+    padding-left: 25px;
     height: 500px;
     background: #A8FC9A;
+
+    h2 {
+      color: gray;
+    }
+
+    ul{
+      padding-left: 15px;
+
+    li {
+      list-style: circle;
+      color: gray;
+      margin-bottom: 7px;
+
+      a {
+        text-decoration: none;
+        color: gray;
+        font-weight: bold;
+
+        &:hover {
+          padding-left: 10px;
+          font-weight: bolder;
+          color: #fff;
+        }
+        }
+      }
+    }
   }
   main {
-    @include span-columns(8.276);
-    @include reset-display;
+    @include span-columns(8);
+    // @include reset-display;
+    border-radius: 35px;
     margin-right: 0;
     background: #EC554D;
     height: 500px;
@@ -42,6 +85,19 @@ header{
 
     h2 {
       color: #fff;
+    }
+
+    #addBook{
+      margin-top: 70px;
+      width: 100%;
+      text-align: center;
+      font-size: 60px;
+    }
+
+    i {
+      color: #fff;
+      font-size: 200px;
+      margin-left: 232px;
     }
 
     span{
@@ -64,8 +120,15 @@ header{
 
       &:last-child {
         margin-top: 25px;
+        letter-spacing: 1.5px;
         font-size: 20px;
-        font-weight: bold;
+        background: gray;
+        color: #fff;
+        font-weight: normal;
+
+        &:hover {
+          background: #AAAAAA;
+        }
       }
     }
   }
