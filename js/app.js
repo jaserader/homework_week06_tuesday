@@ -4,11 +4,11 @@ var Contact = Backbone.Model.extend({
   urlRoot: "http://tiny-starburst.herokuapp.com/collections/contactsjase",
 
     defaults: {
-      "email": " ",
-      "name": " ",
-      "phoneNumber": " ",
-      "twitter": " ",
-      "linkedin": " "
+      "email": "",
+      "name": "",
+      "phoneNumber": "",
+      "twitter": "",
+      "linkedin": ""
     }
 })
 
@@ -114,7 +114,7 @@ var contactsRouter = Backbone.Router.extend({
   routes: {
     "": "home",
     "contacts": "contacts",
-    "contactsJase/:id" : "contactDetails"
+    "contacts/:id" : "contactDetails"
   },
 
   home: function(){
@@ -130,16 +130,16 @@ var contactsRouter = Backbone.Router.extend({
   },
 
   contactDetails: function(id) {
-    console.log(id);
+
     var view = new contactDetailsView({
       model: new Contact({
         id: id
       })
     });
-    view.model.fetch();
-    view.render();
-    $('#mainArea').html(view.$el);
-    view.listenTo(Contact, 'sync', view.render());
+    view.model.fetch().then(function(){
+      view.render();
+      $('#mainArea').html(view.$el);
+    });
   }
 });
 

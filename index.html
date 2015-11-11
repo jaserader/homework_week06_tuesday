@@ -48,7 +48,7 @@
       <ul>
         <% _.forEach(contacts, function(contact){ %>
           <li>
-            <a id="expand" href="#contactsJase/<%= contact._id %>"><%= contact.name %></a>
+            <a id="expand" href="#contacts/<%= contact._id %>"><%= contact.name %></a>
             <div class="box">
                 <%= _.trunc(contact.body, 100) %>
             </div>
@@ -59,11 +59,12 @@
     </script>
 
     <script id="contactDetailTemplate" type="text/template">
-      <div><%= email %></div>
-        <span><%= name %></span>
-        <span><%= phoneNumber %></span>
-        <span><%= twitter %></span>
-        <span><%= linkedin %></span>
+      <h4>Name: <span id="deets"><%= name %></span></h4>
+      <h4>Email: <span id="deets"><%= email %></span></h4>
+      <h4>Number: <span id="deets"><%= phoneNumber %></span></h4>
+      <h4>Twitter: <span id="deets"><%= twitter %></span></h4>
+      <h4>Linkedin: <span id="deets"><%= linkedin %></span></h4>
+
 
     </script>
 

@@ -87,6 +87,24 @@ header{
       color: #fff;
     }
 
+    h4{
+      margin-top: 7px;
+      margin-bottom: 7px;
+      font-weight: bolder;
+      font-size: 20px;
+      text-decoration: underline;
+      color: #91B3CE;
+    }
+
+    #deets {
+      width: 100%;
+      margin-left: 26px;
+      display: block;
+      float: left;
+      font-size: 20px;
+      font-weight: normal;
+    }
+
     #addBook{
       margin-top: 70px;
       width: 100%;
@@ -97,7 +115,7 @@ header{
     i {
       color: #fff;
       font-size: 200px;
-      margin-left: 232px;
+      margin-left: 34%;
     }
 
     span{
